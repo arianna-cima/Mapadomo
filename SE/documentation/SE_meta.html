@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Methodological Appendix: Sweden</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        h2 { color: #2F4F4F; }
+        h3 { color: #4B0082; }
+        ul { margin-top: 0; }
+        a { color: #1E90FF; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+<h2>Methodological Appendix: Sweden</h2>
+
+<p>
+For Sweden, I compile a comprehensive panel of housing statistics using register-based data from Statistics Sweden (SCB).
+All datasets are extracted through the SCB <em>Statistikdatabasen</em> interface and cover the full set of
+<strong>290 municipalities</strong>. The primary variables include the number of dwellings, their characteristics
+(type of building, size, period of construction), the distribution of residential and non-residential floor space, income data at the municipal level, house prices and rents.
+</p>
+
+<p>
+For the price data, information is collected directly from the source website at the municipal level 
+(<a href="https://www.scb.se/en/finding-statistics/statistics-by-subject-area/housing-construction-and-building/real-estate/real-estate-prices-and-registrations-of-title/pong/tables-and-graphs/statistics-for-municipalities/average-prices-for-one--and-two-dwelling-buildings-2024-by-municipality/" target="_blank" rel="noopener noreferrer">Statistics Sweden</a>). 
+The dataset includes the municipality code and name, the number of purchases, the average transaction price 
+(expressed in SEK thousands), and percentage changes in prices over multiple horizons: one year (2023&ndash;2024), 
+five years (2019&ndash;2024), ten years (2014&ndash;2024), and twenty years (2004&ndash;2024). To obtain a complete time series, the missing year is interpolated 
+using regional House Price Indices (HPI), including indices for the main cities. In addition, linear interpolation 
+is applied to ensure consistency and to construct a smooth municipal-level price time series.
+</p>
+
+<h3>1. Dwelling Stock by Useful Floor Space, Building Type, and Municipality (2013&ndash;2024)</h3>
+<p>
+<strong>Source:</strong> Number of dwellings by region, type of building and useful floor space.<br>
+<strong>Table:</strong> BO0104T5<br>
+<strong>Link:</strong>
+<a href="https://www.statistikdatabasen.scb.se/pxweb/en/ssd/START__BO__BO0104__BO0104D/BO0104T5/" target="_blank">
+SCB BO0104T5
+</a>
+</p>
+
+<p>We extract the annual number of dwellings by municipality, disaggregated by:</p>
+<ul>
+    <li><strong>Type of building:</strong>
+        <ul>
+            <li>One- or two-dwelling buildings: Detached one- and two-dwelling units, semi-detached houses, row houses, and linked buildings. Seasonal or secondary-use buildings are excluded.</li>
+            <li>Multi-dwelling buildings: Buildings with <strong>three or more apartments</strong>, including balcony access housing.</li>
+            <li>Other buildings: Non-residential buildings that nevertheless contain ordinary dwellings (e.g., commercial or public buildings with residential units).</li>
+        </ul>
+    </li>
+    <li><strong>Useful floor space (sqm categories):</strong>
+        &lt;31; 31&ndash;40; 41&ndash;50; 51&ndash;60; 61&ndash;70; 71&ndash;80; 81&ndash;90; 91&ndash;100;
+        101&ndash;110; 111&ndash;120; 121&ndash;130; 131&ndash;140; 141&ndash;150; 151&ndash;160;
+        161&ndash;170; 171&ndash;180; 181&ndash;190; 191&ndash;200; &gt;200
+    </li>
+</ul>
+
+<h3>2. Dwelling Stock by Number of Rooms and Kitchen Type (2013&ndash;2024)</h3>
+<p>
+<strong>Source:</strong> Number of dwellings by region, type of building and size of dwelling.<br>
+<strong>Table:</strong> BO0104T09<br>
+<strong>Link:</strong>
+<a href="https://www.statistikdatabasen.scb.se/pxweb/en/ssd/START__BO__BO0104__BO0104D/BO0104T09/" target="_blank">
+SCB BO0104T09
+</a>
+</p>
+
+<ul>
+    <li><strong>Types of building:</strong> Multi-dwelling buildings, other buildings, and special housing.</li>
+    <li><strong>Dwelling layout categories:</strong>
+        <ul>
+            <li>Dwellings without kitchen equipment</li>
+            <li>1 room and kitchen</li>
+            <li>1 room and kitchenette</li>
+            <li>2 rooms and kitchen</li>
+            <li>2 or more rooms with kitchenette</li>
+        </ul>
+    </li>
+</ul>
+<p><em>Note:</em> One- or two-dwelling buildings are not included in this dataset.</p>
+
+<h3>3. Dwelling Stock by Period of Construction (2013&ndash;2019)</h3>
+<p>
+<strong>Source:</strong> Number of dwellings by region, type of building and period of construction.<br>
+<strong>Table:</strong> BO0104T02<br>
+<strong>Link:</strong>
+<a href="https://www.statistikdatabasen.scb.se/pxweb/en/ssd/START__BO__BO0104__BO0104D/BO0104T02/" target="_blank">
+SCB BO0104T02
+</a>
+</p>
+
+<ul>
+    <li><strong>Type of building:</strong> One- or two-dwelling buildings, multi-dwelling buildings, and other buildings.</li>
+    <li><strong>Construction period:</strong> Ten-year intervals from pre-1930, 1931&ndash;1940, …, 2011&ndash;2020. Data for 2021 onward are not available.</li>
+</ul>
+
+<h3>4. Dwelling Stock by Useful Floor Space (Duplicate Source) (2013&ndash;2024)</h3>
+<p>
+<strong>Source:</strong> Number of dwellings by region, type of building and useful floor space (same as Source 1).<br>
+<strong>Table:</strong> BO0104T5<br>
+<strong>Link:</strong>
+<a href="https://www.statistikdatabasen.scb.se/pxweb/en/ssd/START__BO__BO0104__BO0104D/BO0104T5/" target="_blank">
+SCB BO0104T5
+</a>
+</p>
+
+<p>This dataset is used both for disaggregation by building type and for validation/harmonization of dwelling size estimates.</p>
+
+<h3>5. Residential and Non-Residential Floor Space within Localities (2000&ndash;2020)</h3>
+<p>
+<strong>Source:</strong> Residential and non-residential floor space within localities, by region.<br>
+<strong>Table:</strong> MI0810B<br>
+<strong>Link:</strong>
+<a href="https://www.statistikdatabasen.scb.se/pxweb/en/ssd/START__MI__MI0810__MI0810B/BostLokiTatortReg/" target="_blank">
+SCB MI0810B
+</a>
+</p>
+
+<ul>
+    <li><strong>Residential floor space (1,000 sqm)</strong></li>
+    <li><strong>Non-residential floor space (1,000 sqm)</strong></li>
+    <li><strong>By property type:</strong>
+        <ul>
+            <li>One- or two-dwelling buildings</li>
+            <li>Multi-dwelling and commercial buildings</li>
+            <li>Industrial buildings</li>
+            <li>Total floor space</li>
+        </ul>
+    </li>
+</ul>
+
+<h3>6. Average Monthly Salary by Municipality (2007&ndash;2024)</h3>
+<p>
+<strong>Source:</strong> Average monthly salary in the municipalities by region, sex, observations and year.<br>
+<strong>Link:</strong>
+<a href="https://www.statistikdatabasen.scb.se/pxweb/en/ssd/START__AM__AM0106__AM0106A/Kommun17g/" target="_blank">
+SCB AM0106A
+</a>
+</p>
+
+<ul>
+    <li><strong>Variables:</strong>
+        <ul>
+            <li>Average monthly salary in the municipalities (212 municipalities for number of employees and 290 for salary)</li>
+            <li>Number of employees by sex: men, women, and total</li>
+        </ul>
+    </li>
+    <li><strong>Time coverage:</strong> 2007&ndash;2024</li>
+    <li><strong>Population:</strong> Employees aged 18&ndash;68 (until 2013, upper age limit 64; from 2023, upper age limit increased from 66 to 68)</li>
+    <li><strong>Definition:</strong> Monthly salary refers to contractually negotiated salaries, including base salary and fixed supplements, as well as variable supplements such as overtime, on-call, and preparation compensations.</li>
+</ul>
+
+<h3>7. Number of Dwellings by Region, Type of Building, and Tenure (1990&ndash;2024)</h3>
+<p>
+<strong>Source:</strong> Number of dwellings by region, type of building and tenure (including special housing).<br>
+<strong>Table:</strong> BO0104T04<br>
+<strong>Link:</strong>
+<a href="https://www.statistikdatabasen.scb.se/pxweb/en/ssd/START__BO__BO0104__BO0104D/BO0104T04/" target="_blank">
+SCB BO0104T04
+</a>
+</p>
+
+<ul>
+    <li><strong>Types of building:</strong>
+        <ul>
+            <li>One- or two-dwelling buildings</li>
+            <li>Multi-dwelling buildings</li>
+            <li>Other buildings</li>
+            <li>Special housing</li>
+        </ul>
+    </li>
+    <li><strong>Tenure categories:</strong>
+        <ul>
+            <li>Rented dwellings</li>
+            <li>Tenant-owned dwellings</li>
+            <li>Owner-occupied dwellings</li>
+            <li>Data missing</li>
+        </ul>
+    </li>
+</ul>
+
+<h3>8. Average Prices for One- and Two-Dwelling Buildings by Municipality (2024)</h3>
+<p>
+<strong>Source:</strong> Average prices for one- and two-dwelling buildings by municipality in 2024.<br>
+<strong>Link:</strong>
+<a href="https://www.scb.se/en/finding-statistics/statistics-by-subject-area/housing-construction-and-building/real-estate/real-estate-prices-and-registrations-of-title/pong/tables-and-graphs/statistics-for-municipalities/average-prices-for-one--and-two-dwelling-buildings-2024-by-municipality/" target="_blank">
+SCB Average Prices 2024
+</a>
+</p>
+
+<p>The table contains:</p>
+<ul>
+    <li>Number of purchases and average prices for one- and two-dwelling buildings by municipality in 2024.</li>
+    <li>Development of prices over different periods:
+        <ul>
+            <li>1 year: 2023&ndash;2024</li>
+            <li>5 years: 2019&ndash;2024</li>
+            <li>10 years: 2014&ndash;2024</li>
+            <li>20 years: 2004&ndash;2024</li>
+        </ul>
+    </li>
+    <li>Price changes are calculated based on the purchase-price coefficient (price/assessed value).</li>
+</ul>
+
+<h3>9. Webscraped Prices (2018)</h3>
+<p>The table contains:</p>
+<ul>
+    <li>282 municipalities</li>
+    <li>Development of prices over different periods:
+        <ul>
+            <li>1 year: 2023&ndash;2024</li>
+            <li>5 years: 2019&ndash;2024</li>
+            <li>10 years: 2014&ndash;2024</li>
+            <li>20 years: 2004&ndash;2024</li>
+        </ul>
+    </li>
+    <li>Price changes are calculated based on the purchase-price coefficient (price/assessed value).</li>
+</ul>
+
+
+<p>
+
+</body>
+</html>
+

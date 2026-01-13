@@ -1,0 +1,10 @@
+#source_prices
+2019 offer prices are based on webscraped prices. Time series are extend backward to 1990 according to regional OECD HPI index. Prices are weighted according to totalm2 downloaded by the Swedish Statistical Office (https://www.scb.se/en/)
+Transaction prices from the Swedish statistical database (https://www.scb.se/en/finding-statistics/statistics-by-subject-area/housing-construction-and-building/real-estate-prices-and-registrations-of-title/real-estate-prices-and-registrations-of-title/#_TablesintheStatisticalDatabase)
+#source_stocks
+Dwellings and sqm per type from Swedish Statistical office (https://www.scb.se/en/).  
+Time series for dwellings is available from 1990 to 2019 while totalm2 are available for 200/2005/2010/2015. Missing years have been filled according to the totalm2/dwelling rate and multiplying it for the number of dwellings
+
+#Definition_type
+House are 1-2 dwellings building 
+Flat are multi-dwelling building, other building and special housing

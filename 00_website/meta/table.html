@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dwelling Metadata</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f6fa;
+            margin: 20px;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #2f3640;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #ffffff;
+            box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+        }
+        th, td {
+            border: 1px solid #dcdde1;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #718093;
+            color: #ffffff;
+        }
+        tr:nth-child(even) {
+            background-color: #f1f2f6;
+        }
+        tr:hover {
+            background-color: #dcdde1;
+        }
+        .section-title {
+            background-color: #44bd32;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dwelling Metadata Overview</h1>
+
+    <table>
+        <tr>
+            <th rowspan="2">Country Code</th>
+            <th rowspan="2">Country Name</th>
+            <th colspan="14" class="section-title">Dwelling Statistics</th>
+            <th colspan="6" class="section-title">Prices</th>
+            <th colspan="4" class="section-title">Income</th>
+            <th colspan="3" class="section-title">Population</th>
+        </tr>
+        <tr>
+            <th>Number of dwelling</th>
+            <th>Number by type</th>
+            <th>Number of m2</th>
+            <th>Number of m2 by type</th>
+            <th>Number of avg house m2</th>
+            <th>Number by size</th>
+            <th>Number by size/type</th>
+            <th>Number of rooms</th>
+            <th>Number of rooms/type</th>
+            <th>Number by age</th>
+            <th>Number by age/type</th>
+            <th>Number by tenure</th>
+            <th>Number by tenure/type</th>
+            <th>Secondary dwelling</th>
+            <th>Transaction prices</th>
+            <th>Transaction by type</th>
+            <th>Offer price webscraped</th>
+            <th>OECD house price index</th>
+            <th>Source</th>
+            <th>Offer by type</th>
+            <th>Monthly net income</th>
+            <th>Monthly gross income</th>
+            <th>Annual income</th>
+            <th>Number of people</th>
+            <th>People by gender</th>
+            <th>People by age</th>
+        </tr>
+
+        <tr>
+            <td>SE</td>
+            <td>Sweden</td>
+            <td>Yes 2013-2024</td>
+            <td>Yes 2013-2024</td>
+            <td>Yes 2013-2024</td>
+            <td>Yes 2013-2024</td>
+            <td>Yes 2013-2024</td>
+            <td>Yes 2013-2024</td>
+            <td>Yes 2013-2024</td>
+            <td>Yes 2013-2024</td>
+            <td>Yes 2013-2024</td>
+            <td>Yes 2013-2024</td>
+            <td>Yes 2013-2024</td>
+            <td>Yes 2013-2024</td>
+            <td>Yes 2013-2024</td>
+            <td>Yes</td>
+            <td>Only for houses, imputed for flats</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>Yes (Hemnet)</td>
+            <td>Yes</td>
+            <td>20011</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td>SI</td>
+            <td>Slovenia</td>
+            <td>Yes, 2011,2015,2018,2021 + linear interpolation</td>
+            <td>Yes, only using linear interpolation</td>
+            <td>Yes, 2011,2015,2018,2021 + interpolation/construction rate</td>
+            <td>Yes, only linear interpolation</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>Yes 2011,2015,2018,2021 + interpolation</td>
+            <td>No</td>
+            <td>Yes only at Slovenia level</td>
+            <td>No</td>
+            <td>Yes but only at NUTS3</td>
+            <td>Yes but only at NUTS3</td>
+            <td>Yes</td>
+            <td></td>
+            <td>No</td>
+            <td>No</td>
+            <td>Yes</td>
+            <td>No</td>
+            <td>Yes (www.gohome.si)</td>
+            <td></td>
+            <td>1770</td>
+            <td></td>
+            <td></td>
+            <td>fix income</td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td>ES</td>
+            <td>Spain</td>
+            <td>Yes 2001,2011,2021 + interpolation with construction data</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>No</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td>FR</td>
+            <td>France</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Yes (Seloger)</td>
+            <td></td>
+            <td>509261</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+    </table>
+</body>
+</html>
+

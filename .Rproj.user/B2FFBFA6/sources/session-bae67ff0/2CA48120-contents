@@ -1,0 +1,139 @@
+library(data.table)
+library(tidyverse)
+library(sf)
+library(plotly)
+library(jsonlite)
+library(geojsonio)
+
+#------------------------------------------------------
+# Load Data
+#------------------------------------------------------
+base_path <- "C:/Users/annai/Documents/backup_computer_ec/Contratti_lavoro/EU_Temporary_agent/materiali_di_lavoro/mapadomo/Mapadomo_v2/SE/outputdata/final/"
+file_name <- "SE_regio.csv"
+
+data <- fread(file.path(base_path, file_name))
+data_tbl <- as_tibble(data)
+
+#------------------------------------------------------
+# Load Sweden LAU Shapefile (WGS84)
+#------------------------------------------------------
+shp_eu <- st_read(
+  "C:/Users/annai/Documents/backup_computer_ec/Contratti_lavoro/EU_Temporary_agent/materiali_di_lavoro/mapadomo/Mapadomo_v2/00_georeference/LAU_RG_01M_2020_3035.shp"
+) %>%
+  filter(CNTR_CODE == "SE") %>%
+  st_transform(4326)
+
+#------------------------------------------------------
+# Indicators to include in dropdown
+#------------------------------------------------------
+indicators <- c("dwl", "ppm2", "totalm2")
+yr  <- "2019"
+tp  <- "all"
+
+#------------------------------------------------------
+# Build a list of datasets, one per indicator
+#------------------------------------------------------
+indicator_data <- list()
+
+for (ind in indicators) {
+  
+  dd <- data_tbl %>%
+    filter(
+      level == "laucode",
+      indicator == ind,
+      year == yr,
+      type == tp
+    )
+  
+  dd$value <- as.numeric(dd$value)
+  
+  shp_tmp <- shp_eu %>%
+    left_join(dd, by = c("GISCO_ID" = "nuts"))
+  
+  # Quantile classes
+  shp_tmp$z_quantile <- cut(
+    shp_tmp$value,
+    breaks = quantile(shp_tmp$value, probs = seq(0, 1, 0.2), na.rm = TRUE),
+    include.lowest = TRUE,
+    labels = FALSE
+  )
+  
+  indicator_data[[ind]] <- shp_tmp
+}
+
+#------------------------------------------------------
+# Convert sf → geojson list (same for all indicators)
+#------------------------------------------------------
+shp_geojson_str <- geojson_json(shp_eu)
+shp_geojson <- jsonlite::fromJSON(shp_geojson_str, simplifyVector = FALSE)
+
+#------------------------------------------------------
+# Build Plotly FIG with 3 traces (one per indicator)
+#------------------------------------------------------
+fig <- plot_ly()
+
+for (i in seq_along(indicators)) {
+  
+  ind <- indicators[i]
+  shp_tmp <- indicator_data[[ind]]
+  
+  fig <- fig %>% add_trace(
+    type = "choropleth",
+    geojson = shp_geojson,
+    locations = shp_tmp$GISCO_ID,
+    z = shp_tmp$z_quantile,
+    colorscale = "Blues",
+    featureidkey = "properties.GISCO_ID",
+    hovertext = paste0(
+      "<b>", shp_tmp$LAU_NAME, "</b><br>",
+      ind, ": ", format(shp_tmp$value, big.mark = ",")
+    ),
+    hoverinfo = "text",
+    visible = ifelse(i == 1, TRUE, FALSE)   # only first visible
+  )
+}
+
+#------------------------------------------------------
+# Add dropdown menu
+#------------------------------------------------------
+fig <- fig %>% layout(
+  title = paste0("Sweden Municipal Indicators (", yr, ")"),
+  geo = list(
+    fitbounds = "locations",
+    visible = FALSE,
+    projection = list(type = "mercator")
+  ),
+  updatemenus = list(
+    list(
+      type = "dropdown",
+      direction = "down",
+      x = 0,
+      y = 1.15,
+      buttons = lapply(seq_along(indicators), function(i) {
+        list(
+          method = "update",
+          args = list(
+            list(visible = {
+              vis <- rep(FALSE, length(indicators))
+              vis[i] <- TRUE
+              vis
+            }),
+            list(title = paste0("Indicator: ", indicators[i]))
+          ),
+          label = indicators[i]
+        )
+      })
+    )
+  )
+)
+
+fig
+
+#------------------------------------------------------
+# Save HTML
+#------------------------------------------------------
+out_folder <- "C:/Users/annai/Documents/backup_computer_ec/Contratti_lavoro/EU_Temporary_agent/materiali_di_lavoro/mapadomo/Mapadomo_v2/SE/website/maps_SE"
+dir.create(out_folder, showWarnings = FALSE, recursive = TRUE)
+
+file_out <- file.path(out_folder, paste0("map_dropdown_", yr, ".html"))
+htmlwidgets::saveWidget(fig, file_out, selfcontained = TRUE)

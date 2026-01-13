@@ -1,0 +1,66 @@
+Documentation Sweden
+
+Data are taken from the swedish statistical office (https://www.scb.se/en/)
+
+
+Dwellings
+Number of dwellings by region, type of building and useful floor space. Year 2013 - 2019
+https://www.statistikdatabasen.scb.se/pxweb/en/ssd/START__BO__BO0104__BO0104D/BO0104T5/
+
+Number of dwellings by region, type of building and tenure (including special housing). Year 1990 - 2019
+https://www.statistikdatabasen.scb.se/pxweb/en/ssd/START__BO__BO0104__BO0104D/BO0104T04/
+
+size
+Number of dwellings by region, type of building and useful floor space. Year 2013 - 2019
+https://www.statistikdatabasen.scb.se/pxweb/en/ssd/START__BO__BO0104__BO0104D/BO0104T5/
+
+rooms
+Number of dwellings by region, type of building and size of dwelling. Year 2013 – 2019
+https://www.statistikdatabasen.scb.se/pxweb/en/ssd/START__BO__BO0104__BO0104D/BO0104T09/
+
+Total m2
+Residential and non-residential floor space within localities, by region. Year 2000 – 2015
+https://www.statistikdatabasen.scb.se/pxweb/en/ssd/START__MI__MI0810__MI0810B/BostLokAreaTatort/#
+
+Building
+Residential buildings by region and type of building 2010 - 2016
+https://www.statistikdatabasen.scb.se/pxweb/en/ssd/START__MI__MI0803__MI0803B/Bostadsbyggnad/
+
+HPI
+Regional House price Indices for Sweden 
+https://stats.oecd.org/Index.aspx?DataSetCode=HOUSE_PRICES#
+
+age
+Number of dwellings by region, type of building and period of construction. Year 2013 - 2019
+https://www.statistikdatabasen.scb.se/pxweb/en/ssd/START__BO__BO0104__BO0104D/BO0104T02/
+
+Transaction prices
+Sold tenant-owned flats by region. Year 2000 - 2019
+https://www.statistikdatabasen.scb.se/pxweb/en/ssd/START__BO__BO0501__BO0501C/FastprisBRFRegionAr/
+
+income 
+Average monthly salary in the municipalities by municipality and sex. Year 2007 - 2024
+https://www.statistikdatabasen.scb.se/pxweb/en/ssd/START__AM__AM0106__AM0106A/Kommun17g/
+
+
+R_codes
+SE_dwelling_timeseries
+It creates the number of dwelling at municipality level from 1990 to 2019
+
+SE_size
+It creates the variable size according to the number of dwelling for each size cluster
+
+SE_rooms 
+It creates the number of rooms at municipality level
+
+SE_total_m2
+It creates the number of square meters at municipality level in 2000, 2005, 2010, 2015
+
+SE_interpolation
+interpolate m2 missing years according to the m2/dwelling rate and extending the time series multiplying for the number of dwellings
+
+SE_hpi
+It downloads oecd house price index data 
+
+SE_price
+It downloads webscraped price and it creates mean and median at each nuts level

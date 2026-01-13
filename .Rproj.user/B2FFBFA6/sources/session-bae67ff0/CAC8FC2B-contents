@@ -1,0 +1,67 @@
+# ======================================================
+# Package setup
+# ======================================================
+# This script defines, installs (if necessary), and loads
+# all R packages required to run the Mapadomo project.
+#
+# The script:
+#  - lists all required packages in a single object
+#  - installs any missing packages automatically
+#  - loads packages quietly to keep the console clean
+#"rgeos" "maptools"   "plyr"
+# ======================================================
+
+required_packages <- c(
+  "data.table",
+  "dplyr",
+  "magrittr",
+  "stringr",
+  "stringi",
+  "stringdist",
+  "boot",
+  "round",
+  "xml2",
+  "fs",
+  "vctrs",
+  "Rcpp",
+  "DescTools",
+  "foreign",
+  "strex",
+  "lmtest",
+  "lifecycle",
+  "ggplot2",
+  "ggforce",
+  "readxl",
+  "httr",
+  "zoo",
+  "Hmisc",
+  "plm",
+  "sandwich",
+  "jtools",
+  "officer",
+  "flextable",
+  "huxtable",
+  "MASS",
+  "classInt",
+  "svglite",
+  "pdftools",
+  "purrr",
+  "tidyr",
+  "jsonlite",
+  "rjstat"
+)
+
+installed <- rownames(installed.packages())
+to_install <- setdiff(required_packages, installed)
+
+if (length(to_install) > 0) {
+  install.packages(to_install, dependencies = TRUE)
+}
+
+invisible(
+  lapply(required_packages, function(pkg) {
+    suppressPackageStartupMessages(
+      library(pkg, character.only = TRUE)
+    )
+  })
+)

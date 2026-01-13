@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>                                
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<title>Regional HouseLev v2020</title>
+<link rel="stylesheet" type="text/css" href="/directorates/db/u1/data/housing/regional_hp/map2/css/hpmap.css">
+</head>
+
+<body>
+<div id='content'> <h1>Metadata for IT</h1>
+<ul><li><a href="#avdata">Available data</a></li><li><a href="#results">Results overview</a></li><li><a href="#sources">Sources and definitions</a></li></ul>
+
+<h3 id="avdata">Available data</h3>
+
+<!-- html table generated in R 4.1.3 by xtable 1.8-4 package -->
+<!-- Thu Feb 23 18:35:56 2023 -->
+<table border=1>
+<tr> <th> Code </th> <th> Start year </th> <th> End year </th> <th> NUTS-3 regions </th> <th> Flat / houses </th> <th> Latest value </th>  </tr>
+  <tr> <td> dwellings </td> <td align="right"> 2013 </td> <td align="right"> 2019 </td> <td align="right"> 110 </td> <td align="right">   1 </td> <td> 35 550 k </td> </tr>
+  <tr> <td> gdp </td> <td align="right"> 1990 </td> <td align="right"> 2019 </td> <td align="right"> 110 </td> <td align="right">   0 </td> <td> 1 777 bn </td> </tr>
+  <tr> <td> hhincgross_pp </td> <td align="right"> 1990 </td> <td align="right"> 2019 </td> <td align="right"> 110 </td> <td align="right">   0 </td> <td> 19 711   </td> </tr>
+  <tr> <td> hhincnet_pp </td> <td align="right"> 1990 </td> <td align="right"> 2019 </td> <td align="right"> 110 </td> <td align="right">   0 </td> <td> 18 176   </td> </tr>
+  <tr> <td> m2perdwl </td> <td align="right"> 2013 </td> <td align="right"> 2019 </td> <td align="right"> 110 </td> <td align="right">   1 </td> <td> 71   </td> </tr>
+  <tr> <td> m2perperson </td> <td align="right"> 2013 </td> <td align="right"> 2019 </td> <td align="right"> 110 </td> <td align="right">   0 </td> <td> 42   </td> </tr>
+  <tr> <td> p2inc </td> <td align="right"> 2003 </td> <td align="right"> 2019 </td> <td align="right"> 110 </td> <td align="right">   1 </td> <td> 6   </td> </tr>
+  <tr> <td> pop </td> <td align="right"> 1990 </td> <td align="right"> 2021 </td> <td align="right"> 110 </td> <td align="right">   0 </td> <td> 60 350 k </td> </tr>
+  <tr> <td> pop2dwl </td> <td align="right"> 2013 </td> <td align="right"> 2019 </td> <td align="right"> 110 </td> <td align="right">   0 </td> <td> 17   </td> </tr>
+  <tr> <td> ppm2 </td> <td align="right"> 2003 </td> <td align="right"> 2019 </td> <td align="right"> 110 </td> <td align="right">   1 </td> <td> 1 290   </td> </tr>
+  <tr> <td> rooms </td> <td align="right"> 2013 </td> <td align="right"> 2019 </td> <td align="right"> 110 </td> <td align="right">   1 </td> <td> 193 691 k </td> </tr>
+  <tr> <td> totalm2 </td> <td align="right"> 2013 </td> <td align="right"> 2019 </td> <td align="right"> 110 </td> <td align="right">   1 </td> <td> 2 530 mn </td> </tr>
+  <tr> <td> totalval </td> <td align="right"> 2003 </td> <td align="right"> 2019 </td> <td align="right"> 110 </td> <td align="right">   1 </td> <td> 3 263 bn </td> </tr>
+   </table>
+
+<p>Start and end year denote time range for which NUTS-3 data is available. NUTS-e3 regions denotes the number of NUTS-3 regions for which data is available. flats/houses: If indicator = 1 then this data is avaialable for the subset of apartments and houses. Latest value: shows the last available data for the national aggregate.</p>
+
+<hr>
+<h3 id="results">Results overview</h3>
+
+<h4>Prices over time</h4>
+
+<p><img  id="bubbles" style="height:22em;" src="bubbles_IT.png"><br>Each bubble denotes a NUTS-3 region. Blue colour indicates the capital NUTS-3 region.</p>
+
+<h4>Contribution to overall price evolution</h4>
+
+<p><img  id="contribs" style="height:22em;" src="contribs_IT.png"><br>Each bar denotes the contribution from a specific group of regions to annual house price growth for the national aggregate, weighted by their residential square metres from the previous year.Capital/top metros denotes any NUTS-3 regions of which more than half belongs to the largest metropolitan areas (that together cover more than 15 percent of the population). Other metros denotes the rest of NUTS-3 regions which belong to metropolitan areas. For reference, the red line indicates the annual change of the Eurostat house price index for existing dwellings.</p>
+
+<h4>Residential square metre growth, regional contribution</h4>
+
+<p><img id="m2growth" style="height:22em;" src="m2growth_IT.png"><br>Each bar denotes the contribution from a specific group of regions to annual growth of residential useful square metres for the national aggregate.</p>
+
+<h4>Scraped prices per square metre, compared to stock-weighted average</h4>
+
+<p><img id="boxplots" style="height:22em;" src="boxplots_IT.png"><br>Boxplots denote distribution of the offer price per m2 for scraped listings, within regions that belong to three types of metropolitan area. Box denote 25% and 75% quantiles, whiskers correpond to 1.5 the inter-quartile range. Diamonds indicate the headline (stock-weighted) average price for the same period, i.e. the price from the main database used in the bubble chart above.</p>
+
+<hr>
+<h3 id="sources">Sources and definitions</h3>
+<h4>Headline price data sources for IT</h4>
+<p>Prices from 2003 to 2018 are based on data collected by the Agenzia dell'Entrate. Time series are extend to 2019 according to nuts2 HPI index (nuts3 for Milan, Turin and Rome). Prices are weigthed according to totalm2 published by the Agenzia delle Entrate.<br><br></p>
+<h4>Building stock data sources for IT</h4>
+<p>Dwellings and sqm (2013-2019) have been provided by the Agenzia delle Entrate. Data have been adjusted according to the istat census of 2011 to obtain a reasonable number of houses. (Bias coming from the inclusion of some houses in the category A2 considered as flat)<br><br></p>
+<h4>Definition of house v apartment for IT</h4>
+<p>House for istat data is building with 1 or 2 Interni <br>House for Agenzia delle Entrate is any building in A07-A08-A09 categoria catastale<br><br></p>
+<h4>Definition and data sources for square metres for IT</h4>
+<p>A conversion between Vani (=room) and m2 has been applied according to the several catastal categories</p> 
+<hr>
+<p>Metadata per country: <p><a href='../BE/'>BE</a> <a href='../BG/'>BG</a> <a href='../CZ/'>CZ</a> <a href='../DK/'>DK</a> <a href='../DE/'>DE</a> <a href='../EE/'>EE</a> <a href='../IE/'>IE</a> <a href='../GR/'>GR</a> <a href='../ES/'>ES</a> <a href='../FR/'>FR</a> <a href='../HR/'>HR</a> <a href='../IT/'>IT</a> <a href='../CY/'>CY</a> <a href='../LV/'>LV</a> <a href='../LT/'>LT</a> <a href='../LU/'>LU</a> <a href='../HU/'>HU</a> <a href='../MT/'>MT</a> <a href='../NL/'>NL</a> <a href='../AT/'>AT</a> <a href='../PL/'>PL</a> <a href='../PT/'>PT</a> <a href='../RO/'>RO</a> <a href='../SI/'>SI</a> <a href='../SK/'>SK</a> <a href='../FI/'>FI</a> <a href='../SE/'>SE</a> </p>
+<p><a href="../../overview.html">Back to main page</a></p>
+</div>
+</body>
+</html>
